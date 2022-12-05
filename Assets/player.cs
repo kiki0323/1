@@ -47,6 +47,6 @@ public class player : MonoBehaviour
     {
         audioSource.PlayOneShot(hurt);
         gameManager.GetComponent<GameManager>().DecreaseHp();//扣血
-        print("0");
+
     }
 }

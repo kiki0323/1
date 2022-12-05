@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     float span = 1.0f;             //時間間隔
     float delta = 0;               //現在已經累積的時間
     public GameObject hpGauge;     //至放血環公開變數
-
+    public Text scoretx;          //加分UI
+    public int score = 0;      //重0開始
     void Start()
     {
         
@@ -32,6 +33,12 @@ public class GameManager : MonoBehaviour
     public void DecreaseHp() 
     {
         hpGauge.GetComponent<Image>().fillAmount -= 0.1f;
+
     }
-    
+    public void ad()
+    {
+        print("0");
+        score += 10;
+        scoretx.text = "分數:" + score + "分";
+    }
 }
