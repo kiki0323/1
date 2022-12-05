@@ -29,7 +29,6 @@ public class player : MonoBehaviour
             transform.Translate(3, 0, 0);//往右移動「3」
             audioSource.PlayOneShot(walk);
         }
-
     }
 
     public void LbuttonDown()
@@ -45,8 +44,15 @@ public class player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        audioSource.PlayOneShot(hurt);
-        gameManager.GetComponent<GameManager>().DecreaseHp();//扣血
+        if(collision.tag=="arr")
+        {
+            audioSource.PlayOneShot(hurt);
+            gameManager.GetComponent<GameManager>().DecreaseHp();//扣血
+            print("0");
+        }
+        if (collision.tag == "fish")
+            gameManager.GetComponent<GameManager>().addhp();//扣血
+
 
     }
 }
