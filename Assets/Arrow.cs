@@ -24,6 +24,8 @@ public class Arrow : MonoBehaviour
 
         if (collision.name == "add")
             gameManager.GetComponent<GameManager>().ad();//扣血
-
+        if (collision.name == "fish")
+            gameManager.GetComponent<GameManager>().addhp();//扣血
     }
+
 }
